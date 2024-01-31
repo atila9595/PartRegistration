@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APIREGISTRO.Models;
 
+[Table("produtos")]
 public class Produto
 {   
     [Key]
