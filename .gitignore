@@ -1,0 +1,11 @@
+# Ignorar arquivos e diretórios específicos para o projeto C#
+bin/
+obj/
+*.suo
+*.user
+*.suo
+*.user
+
+# Ignorar arquivos e diretórios específicos para o projeto Angular
+node_modules/
+dist/
