@@ -20,7 +20,7 @@ public class ProdutoService : IProdutoInterface
             try
             {
                 serviceResponse.Dados = _context.Produtos.ToList();
-                Console.WriteLine(_context.Produtos.ToList());
+                
             }
             catch (System.Exception e ) 
             {
@@ -34,9 +34,34 @@ public class ProdutoService : IProdutoInterface
 
         
 
-    Task<ServiceResponse<List<Produto>>> IProdutoInterface.CreateProduto(Produto novoProduto)
+    public async Task<ServiceResponse<List<Produto>>> CreateProduto(Produto novoProduto)
     {
-        throw new NotImplementedException();
+       {
+            ServiceResponse<List<Produto>> serviceResponse = new ServiceResponse<List<Produto>>();
+            try
+            {
+                if (novoProduto == null)    
+                {
+                    serviceResponse.Mensagem = "informe os dados!";
+                    serviceResponse.Sucesso = false;
+                    serviceResponse.Dados = null;
+
+                    return serviceResponse;
+                }
+                _context.Add(novoProduto);
+
+                await _context.SaveChangesAsync();
+
+                serviceResponse.Dados = _context.Produtos.ToList();
+            }
+            catch (System.Exception e ) 
+            {
+                
+                serviceResponse.Mensagem = e.Message;
+                serviceResponse.Sucesso = false;
+            }
+            return serviceResponse;
+        }
     }
 
     Task<ServiceResponse<List<Produto>>> IProdutoInterface.DeletaProduto(int id)

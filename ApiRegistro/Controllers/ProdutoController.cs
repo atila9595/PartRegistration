@@ -24,8 +24,14 @@ public class ProdutoController : ControllerBase
 
     [HttpGet]
     public async Task<ActionResult<Models.ServiceResponse<List<Produto>>>> GetProduto(){
-        Console.WriteLine("entrei no controle]");
+        
         return Ok(await _produtoInterface.GetListProduto());
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<Models.ServiceResponse<List<Produto>>>> CreateProduto(Produto novoProduto){
+        
+        return Ok(await _produtoInterface.CreateProduto(novoProduto));
     }
    
 
