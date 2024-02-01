@@ -11,6 +11,7 @@ export class ProdutoFormComponent implements OnInit{
   @Output() onSubmit = new EventEmitter<Produto>();
   @Input() btnAcao!: string;
   @Input() btnTitulo!: string;
+  @Input() dadosProduto: Produto | null = null;
 
   produtoForm!: FormGroup;
 
@@ -19,18 +20,19 @@ export class ProdutoFormComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    
     this.produtoForm = new FormGroup({
-      codigo: new FormControl('',[Validators.required]),
-      nome: new FormControl('',[Validators.required]),
-      descricao: new FormControl('',[Validators.required]),
-      preco: new FormControl('',[Validators.required])
+      codigo: new FormControl(this.dadosProduto ? this.dadosProduto.codigo : '',[Validators.required]),
+      nome: new FormControl(this.dadosProduto ? this.dadosProduto.nome : '',[Validators.required]),
+      descricao: new FormControl(this.dadosProduto ? this.dadosProduto.descricao : '',[Validators.required]),
+      preco: new FormControl(this.dadosProduto ? this.dadosProduto.preco : '',[Validators.required])
 
     });
   }
 
   submit() {
     this.onSubmit.emit(this.produtoForm.value);
-    console.log(this.produtoForm.value)
+    
     }
 
 }
