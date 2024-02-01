@@ -1,0 +1,30 @@
+<h1>{{btnTitulo}}</h1>
+
+<form [formGroup]="produtoForm" (ngSubmit)="submit()" #formDit="ngForm">
+    <div>
+        <label for="">Codigo:</label>
+        <input type="number" formControlName="codigo" placeholder="Insira o Código!" required>
+    </div>
+
+    <div>
+        <label for="">Nome:</label>
+        <input type="text" formControlName="nome" placeholder="Insira o Nome!" required>
+    </div>
+
+    <div>
+        <label for="">Descrição:</label>
+        <input type="text" formControlName="descricao" placeholder="Insira o Descrição!" required>
+    </div>
+
+    <div>
+        <label for="">Preço:</label>
+        <input type="number" formControlName="preco" placeholder="Insira o Preço!" required>
+    </div>
+
+      <div class="btn-box">
+        <button type="submit" [disabled]="!produtoForm.valid">{{btnAcao}}</button>
+        <button routerLink="">Voltar</button>
+    </div>
+
+    
+</form>
