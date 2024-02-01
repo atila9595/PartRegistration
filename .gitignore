@@ -1,54 +1,61 @@
 # Ignorar arquivos e diretórios específicos para o projeto C#
-bin/
-obj/
-*.suo
-*.user
-*.suo
-*.user
+apiRegistro/bin/
+apiRegistro/obj/
+apiRegistro/*.suo
+apiRegistro/*.user
+
+# Docker
+apiRegistro/.docker/
+apiRegistro/docker-compose.yml
+apiRegistro/Dockerfile
+apiRegistro/*.env
+
+ApiRegistro/obj/
+ApiRegistro/bin/
 
 # Ignorar arquivos e diretórios específicos para o projeto Angular
-node_modules/
-dist/
+AngularRegistro/node_modules/
+AngularRegistro/dist/
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+AngularRegistro/dist/
+AngularRegistro/tmp/
+AngularRegistro/out-tsc/
+AngularRegistro/bazel-out/
 
 # Node
-/node_modules
-npm-debug.log
-yarn-error.log
+AngularRegistro/node_modules/
+AngularRegistro/npm-debug.log
+AngularRegistro/yarn-error.log
 
 # IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+AngularRegistro/.idea/
+AngularRegistro/.project
+AngularRegistro/.classpath
+AngularRegistro/.c9/
+AngularRegistro/*.launch
+AngularRegistro/.settings/
+AngularRegistro/*.sublime-workspace
 
 # Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+AngularRegistro/.vscode/*
+!AngularRegistro/.vscode/settings.json
+!AngularRegistro/.vscode/tasks.json
+!AngularRegistro/.vscode/launch.json
+!AngularRegistro/.vscode/extensions.json
+AngularRegistro/.history/*
 
 # Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+AngularRegistro/.angular/cache
+AngularRegistro/.sass-cache/
+AngularRegistro/.connect.lock
+AngularRegistro/coverage
+AngularRegistro/libpeerconnection.log
+AngularRegistro/testem.log
+AngularRegistro/typings
 
 # System files
-.DS_Store
-Thumbs.db
+AngularRegistro/.DS_Store
+AngularRegistro/Thumbs.db
