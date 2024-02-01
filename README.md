@@ -44,3 +44,9 @@ As requisições podem ser testadas através do Swagger, acessível no endereço
 
 ![image](https://github.com/atila9595/PartRegistration/assets/61739459/2823e39c-961e-4db3-a8f4-4962db0ef106)
 
+
+
+## Video
+
+
+https://github.com/atila9595/PartRegistration/assets/61739459/d54fb189-f31b-40b3-8fd0-4fc99b375231
