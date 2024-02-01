@@ -30,6 +30,10 @@ export class ProdutoService {
   PutProduto(produto: Produto) : Observable<Response<Produto[]>>{
     return this.http.put<Response<Produto[]>>(`${this.apiUrl}`,produto);
   }
+
+  DeleteProduto(id: number) : Observable<Response<Produto>>{
+    return this.http.delete<Response<Produto>>(`${this.apiUrl}?id=${id}`);
+  }
 }
 
 

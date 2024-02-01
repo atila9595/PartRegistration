@@ -8,6 +8,7 @@ import { Produto } from '../../models/Produto';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
+
 search($event: Event) {
   const target = event?.target as HTMLInputElement;
   const value = target.value.toLocaleLowerCase();
@@ -19,7 +20,7 @@ search($event: Event) {
   produto: Produto[] = [];
   produtoGeral: Produto[] = [];
 
-  constructor( private produtoService : ProdutoService){}
+  constructor( private produtoService : ProdutoService, ){}
 
   ngOnInit(): void {
     
@@ -33,6 +34,11 @@ search($event: Event) {
         //console.log(item.nome);
       })
     });
-
   }
+
+  excluirProduto(id: number) {
+    this.produtoService.DeleteProduto(id).subscribe(data =>{
+      window.location.reload();
+    })
+    }
 }
