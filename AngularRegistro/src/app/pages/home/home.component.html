@@ -23,7 +23,7 @@
             <td>{{ item.preco }}</td>
             <td>
                 <button routerLink="/editar/{{item.codigo}}">Editar</button>
-                <button>Detalhe</button>
+                <button routerLink="/detalhes/{{item.codigo}}">Detalhe</button>
             </td>
             <td>
                 <button (click)="excluirProduto(item.codigo)">Excluir</button>
